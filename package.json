@@ -1,0 +1,25 @@
+{
+  "name": "meet",
+  "version": "1.0.0",
+  "description": "An application to simplify group meetings",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OrganTrouble/Meet.git"
+  },
+  "author": "Jesse Davda",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/OrganTrouble/Meet/issues"
+  },
+  "homepage": "https://github.com/OrganTrouble/Meet#readme",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "express-handlebars": "^3.0.0",
+    "redis": "^2.7.1"
+  }
+}
