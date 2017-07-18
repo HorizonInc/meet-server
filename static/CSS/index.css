@@ -1,3 +1,41 @@
-#section {
-    margin-left: 400px;
+#map {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    z-index: 99;
+}
+
+#cover {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    z-index: 1000;
+    background-color: #0A4A59;
+    opacity: 0.85;
+}
+
+#login_contents {
+    text-align: center;
+    position: relative;
+    z-index: 1001;
+}
+
+#facebook {
+    background-color: #3B5998;
+}
+
+#google {
+    background-color: #D50F25;
+}
+
+#index_content {
+    margin-left: 300px;
+}
+
+#side_nav {
+    background-color: #0A4A59;
+}
+
+nav {
+    background-color: #0A4A59;
 }
