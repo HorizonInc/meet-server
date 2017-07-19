@@ -1,12 +1,13 @@
 #map {
     height: 100%;
     width: 100%;
-    position: relative;
+    position: absolute;
     z-index: 99;
 }
 
 #cover {
-    position: relative;
+    display: none;
+    position: absolute;
     height: 100%;
     width: 100%;
     z-index: 1000;
@@ -16,8 +17,8 @@
 
 #login_contents {
     text-align: center;
-    position: relative;
-    z-index: 1001;
+    position: fixed;
+    z-index: 100000;
 }
 
 #facebook {
@@ -29,7 +30,7 @@
 }
 
 #index_content {
-    margin-left: 300px;
+    padding-left: 300px;
 }
 
 #side_nav {
@@ -38,4 +39,9 @@
 
 nav {
     background-color: #0A4A59;
+}
+
+#search {
+    padding-left: 5%;
+    width: 50%;
 }
