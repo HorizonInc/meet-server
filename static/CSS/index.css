@@ -5,30 +5,6 @@
     z-index: 99;
 }
 
-#cover {
-    display: none;
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    z-index: 1000;
-    background-color: #0A4A59;
-    opacity: 0.85;
-}
-
-#login_contents {
-    text-align: center;
-    position: fixed;
-    z-index: 100000;
-}
-
-#facebook {
-    background-color: #3B5998;
-}
-
-#google {
-    background-color: #D50F25;
-}
-
 #index_content {
     padding-left: 300px;
 }
