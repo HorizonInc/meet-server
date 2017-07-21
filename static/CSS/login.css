@@ -21,3 +21,20 @@
 #google {
     background-color: #D50F25;
 }
+
+body {
+    text-align: center;
+    background-color: #0A4A59;
+}
+
+#login_form {
+    width: 30%;
+}
+
+.left {
+  float: left;
+}
+
+#right {
+  float: right;
+}

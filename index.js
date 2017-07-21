@@ -3,11 +3,9 @@ const exphbs = require("express-handlebars");
 const bodyParser = require("body-parser");
 const passport = require('passport');
 const cookieParser = require('cookie-parser');
-const flash = require('flash');
+const client = require("./app/db.js")();
 
 const app = express();
-
-require("./app/db.js")();
 
 app.engine("handlebars", exphbs({defaultLayout: "main"}));
 app.set("view engine", "handlebars");
@@ -19,7 +17,7 @@ app.use(bodyParser.urlencoded({
 app.use(cookieParser());
 app.use(passport.initialize());
 app.use(passport.session());
-app.use(flash());
+//app.use(flash());
 
 app.use(express.static(__dirname + "/static"));
 
