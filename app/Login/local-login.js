@@ -47,5 +47,5 @@ module.exports = (app) => {
               res.render("loggedIn"); //do what happens when a login is successful
             }
         }
-    })
+    });
 }
