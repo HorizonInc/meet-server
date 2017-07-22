@@ -38,14 +38,77 @@ body {
 
 #login_form {
     padding-top: 10%;
-    display: block;
+    position: relative;
+    display: inline-block;
+}
+
+@keyframes colour_change {
+    from { border: 2px solid #2980b9;}
+    to { border: 2px solid #9b59b6; }
 }
 
 #username {
     border-radius: 10px;
     height: 30px;
     width: 50%;
-    border: 2px solid black;
+    border: 2px solid #2980b9;
     padding-left: 2%;
+    background-color: #ecf0f1;
+    color: black;
+    font-family: ubuntu;
+    font-size: 15px;
+}
 
+#username:focus {
+    outline: none;
+    animation-name: colour_change;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+#password:focus {
+    outline: none;
+    animation-name: colour_change;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+#password {
+    border-radius: 10px;
+    height: 30px;
+    width: 50%;
+    border: 2px solid #2980b9;
+    padding-left: 2%;
+    background-color: #ecf0f1;
+    color: black;
+    font-family: ubuntu;
+    font-size: 15px;
+    margin-top: 5%;
+}
+
+@keyframes shadow {
+    from { box-shadow: 0px 0px 0px #888888; }
+    to { box-shadow: 3px 3px 5px #888888; }
+}
+
+#login_button {
+    border-radius: 10px;
+    border: 2px solid #9b59b6;
+    width: 20%;
+    height: 10%;
+    background-color: #2980b9;
+    font-family: ubuntu;
+    font-size: 15px;
+    color: #fff;
+}
+
+#login_button:hover {
+    cursor: pointer;
+    animation-name: shadow;
+    animation-duration: 0.25s;
+    animation-fill-mode: forwards;
+}
+
+#login_button:focus {
+    outline: none;
 }
