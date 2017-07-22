@@ -6,15 +6,16 @@ module.exports = (app) => {
         var check = client.exists(req.body.username);
 
         if(check == 1) {
-          res.render("exists", {
-              name : req.body.username;
-          });
+            res.send("sorry that name already exists");
+          //res.render("exists", {
+            //  name : req.body.username
+         // });
         } else if(check == 0) {
-           let username = req.body.username;
-           let password = sha256(req.body.password);
-           let first_name = req.body.first_name;
-           let last_name = req.body.last_name;
-           let email = req.body.email;
+           var username = req.body.username;
+           var password = sha256(req.body.password);
+           var first_name = req.body.first_name;
+           var last_name = req.body.last_name;
+           var email = req.body.email;
 
            client.hmset("Meet:User:" + username, [
                "username", username,
@@ -44,7 +45,8 @@ module.exports = (app) => {
             var passwordStored = client.hget("Meet:User:" + username, password);
 
             if(passwordStored == password) {
-              res.render("loggedIn"); //do what happens when a login is successful
+              //res.render("loggedIn"); //do what happens when a login is successful
+              res.send("Welcome" + username);
             }
         }
     });

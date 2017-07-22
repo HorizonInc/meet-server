@@ -1,40 +1,51 @@
-#cover {
-    display: none;
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    z-index: 1000;
-    background-color: #0A4A59;
-    opacity: 0.85;
-}
-
-#login_contents {
-    text-align: center;
-    position: fixed;
-    z-index: 100000;
-}
-
-#facebook {
-    background-color: #3B5998;
-}
-
-#google {
-    background-color: #D50F25;
-}
-
 body {
     text-align: center;
-    background-color: #0A4A59;
+    background: #2980b9;
+    background: -webkit-linear-gradient(left top, #2980b9, #9b59b6);
+    background: -o-linear-gradient(bottom right, #2980b9, #9b59b6);
+    background: -moz-linear-gradient(bottom right, #2980b9, #9b59b6);
+    background: linear-gradient(to bottom right, #2980b9, #9b59b6);
+    font-family: ubuntu;
 }
 
-#login_form {
-    width: 30%;
-}
-
-.left {
-  float: left;
+#login_content {
+    background-color: #9b59b6;
+    width: 45%;
+    height: 35%;
+    border-radius: 25px;
+    border: 3px solid #9b59b6;
 }
 
 #right {
-  float: right;
+    float: right;
+    width: 60%;
+    height: 100%;
+    background-color: #fff;
+    border-bottom-right-radius: 25px;
+    border-top-right-radius: 25px;
+}
+
+#left {
+    background-color: #9b59b6;
+    height: 100%;
+    width: 40%;
+    float: left;
+    border-bottom-left-radius: 25px;
+    border-top-left-radius: 25px;
+    color: #fff;
+    font-size: 30px;
+}
+
+#login_form {
+    padding-top: 10%;
+    display: block;
+}
+
+#username {
+    border-radius: 10px;
+    height: 30px;
+    width: 50%;
+    border: 2px solid black;
+    padding-left: 2%;
+
 }
