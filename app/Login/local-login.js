@@ -35,6 +35,8 @@ module.exports = (app) => {
     });
 
 
+    var passwordStored;
+
     app.post("/loginAccount", (req, res) => {
         var username = req.body.username;
         var password = sha256(req.body.password);
@@ -42,13 +44,27 @@ module.exports = (app) => {
         if(client.exists("Meet:User:" + username) == 0) {
             res.render("invalid");
         } else if(client.exists("Meet:User:" + username) == 1) {
-            var passwordStored = client.hget("Meet:User:" + username, password);
+            var key = "Meet:User:" + username;
+
+            client.hget(key, "password", (err, obj) => {
+                if(err != undefined) {
+                    console.log("There was an error : " + err);
+                } else {
+                    passwordStored = obj.toString();
+                    console.log("beep: " + obj);
+                }
+            });
+
+            console.log("store: " + passwordStored);
+            console.log("post: " + password);
 
             if(passwordStored == password) {
               //res.render("loggedIn"); //do what happens when a login is successful
               res.send("Welcome" + username);
               console.log("Welcome" + username);
-            }
+          } else {
+              res.send("That username and password combination is not valid");
+          }
         }
     });
 }
