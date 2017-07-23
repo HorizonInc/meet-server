@@ -11,4 +11,10 @@ module.exports = (app) => {
     app.get("/register", (req, res) => {
         res.render("register");
     });
+
+    app.get("/indextest", (req, res) => {
+        res.render("index", {
+            name: "test_profile"
+        });
+    });
 }

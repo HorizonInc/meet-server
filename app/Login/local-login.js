@@ -46,25 +46,21 @@ module.exports = (app) => {
         } else if(client.exists("Meet:User:" + username) == 1) {
             var key = "Meet:User:" + username;
 
-            client.hget(key, "password", (err, obj) => {
+            client.hget(key, "password", (err, data) => {
                 if(err != undefined) {
                     console.log("There was an error : " + err);
                 } else {
-                    passwordStored = obj.toString();
-                    console.log("beep: " + obj);
+                    passwordStored = data;
+
+                    if(passwordStored == password) {
+                        //res.render("loggedIn"); //do what happens when a login is successful
+                        res.send("Welcome " + username);
+                        console.log("Welcome" + username);
+                    } else {
+                        res.send("That username and password combination is not valid");
+                    }
                 }
             });
-
-            console.log("store: " + passwordStored);
-            console.log("post: " + password);
-
-            if(passwordStored == password) {
-              //res.render("loggedIn"); //do what happens when a login is successful
-              res.send("Welcome" + username);
-              console.log("Welcome" + username);
-          } else {
-              res.send("That username and password combination is not valid");
-          }
         }
     });
 }
