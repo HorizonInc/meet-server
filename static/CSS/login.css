@@ -1,19 +1,21 @@
 body {
     text-align: center;
-    background: #2980b9;
-    background: -webkit-linear-gradient(left top, #2980b9, #9b59b6);
-    background: -o-linear-gradient(bottom right, #2980b9, #9b59b6);
-    background: -moz-linear-gradient(bottom right, #2980b9, #9b59b6);
-    background: linear-gradient(to bottom right, #2980b9, #9b59b6);
+    background: #66a5ad;
+    background: -webkit-linear-gradient(left top, #66a5ad, #003b46);
+    background: -o-linear-gradient(bottom right, #66a5ad, #003b46);
+    background: -moz-linear-gradient(bottom right, #66a5ad, #003b46);
+    background: linear-gradient(to bottom right, #66a5ad, #003b46);
     font-family: ubuntu;
 }
 
 #login_content {
-    background-color: #9b59b6;
+    background-color: #003b46;
     width: 45%;
     height: 35%;
     border-radius: 25px;
-    border: 3px solid #9b59b6;
+    border: 3px solid #003b46;
+    margin: 0 auto;
+    margin-top: 15%;
 }
 
 #right {
@@ -26,7 +28,7 @@ body {
 }
 
 #left {
-    background-color: #9b59b6;
+    background-color: #003b46;
     height: 100%;
     width: 40%;
     float: left;
@@ -36,27 +38,36 @@ body {
     font-size: 30px;
 }
 
+#right_title {
+    font-size: 24px;
+    padding-top: 2%;
+    color: #003b46;
+}
+
 #login_form {
-    padding-top: 10%;
+    padding-top: 3%;
     position: relative;
-    display: inline-block;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
 }
 
 @keyframes colour_change {
-    from { border: 2px solid #2980b9;}
-    to { border: 2px solid #9b59b6; }
+    from { border: 2px solid #66a5ad;}
+    to { border: 2px solid #003b46; }
 }
 
 #username {
-    border-radius: 10px;
-    height: 30px;
+    height: 10%;
     width: 50%;
-    border: 2px solid #2980b9;
+    border: none;
     padding-left: 2%;
-    background-color: #ecf0f1;
+    background-color: #bdc3c7;
     color: black;
     font-family: ubuntu;
     font-size: 15px;
+    display: block;
+    margin: 0 auto;
 }
 
 #username:focus {
@@ -74,41 +85,97 @@ body {
 }
 
 #password {
-    border-radius: 10px;
-    height: 30px;
+    height: 10%;
+    display: block;
     width: 50%;
-    border: 2px solid #2980b9;
+    border: none;
     padding-left: 2%;
-    background-color: #ecf0f1;
+    background-color: #bdc3c7;
     color: black;
+    margin: 0 auto;
     font-family: ubuntu;
     font-size: 15px;
     margin-top: 5%;
 }
 
 @keyframes shadow {
-    from { box-shadow: 0px 0px 0px #888888; }
-    to { box-shadow: 3px 3px 5px #888888; }
+    from { box-shadow: 0px 0px 0px black; }
+    to { box-shadow: 3px 3px 5px black; }
 }
 
-#login_button {
-    border-radius: 10px;
-    border: 2px solid #9b59b6;
-    width: 20%;
+.button {
+    border: 2px solid #003b46;
+    width: 30%;
     height: 10%;
-    background-color: #2980b9;
+    background-color: #66a5ad;
     font-family: ubuntu;
     font-size: 15px;
     color: #fff;
+    display: block;
+    margin: 0 auto;
+    margin-top: 5%;
 }
 
-#login_button:hover {
+.button:hover {
     cursor: pointer;
     animation-name: shadow;
     animation-duration: 0.25s;
     animation-fill-mode: forwards;
 }
 
-#login_button:focus {
+.button:focus {
+    outline: none;
+}
+
+#label {
+    font-size: 15px;
+    display: block;
+}
+
+#facebook {
+    margin: 0 auto;
+    display: block;
+    width: 70%;
+    height: 10%;
+    background-color: #3b5998;
+    margin-top: 10%;
+    border: none;
+    font-family: ubuntu;
+    font-size: 15px;
+    color: #fff;
+}
+
+#facebook:hover {
+    cursor: pointer;
+    animation-name: shadow;
+    animation-duration: 0.25s;
+    animation-fill-mode: forwards;
+}
+
+#facebook:focus {
+    outline: none;
+}
+
+#google {
+    margin: 0 auto;
+    display: block;
+    width: 70%;
+    height: 10%;
+    background-color: #d34836;
+    margin-top: 5%;
+    border: none;
+    font-family: ubuntu;
+    font-size: 15px;
+    color: #fff;
+}
+
+#google:hover {
+    cursor: pointer;
+    animation-name: shadow;
+    animation-duration: 0.25s;
+    animation-fill-mode: forwards;
+}
+
+#google:focus {
     outline: none;
 }

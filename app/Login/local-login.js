@@ -5,12 +5,12 @@ module.exports = (app) => {
     app.post("/signup", (req, res) => {
         var check = client.exists(req.body.username);
 
-        if(check == 1) {
+        if(check == 0) {
             res.send("sorry that name already exists");
           //res.render("exists", {
             //  name : req.body.username
          // });
-        } else if(check == 0) {
+        } else if(check == 1) {
            var username = req.body.username;
            var password = sha256(req.body.password);
            var first_name = req.body.first_name;
@@ -47,6 +47,7 @@ module.exports = (app) => {
             if(passwordStored == password) {
               //res.render("loggedIn"); //do what happens when a login is successful
               res.send("Welcome" + username);
+              console.log("Welcome" + username);
             }
         }
     });
