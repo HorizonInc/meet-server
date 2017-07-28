@@ -3,20 +3,18 @@
     <!--<div id="cover"></div>-->
     <div id="login_content">
         <div id="right">
-            <div id="loginForm">
-                <h3 id="right_title"> Login to Meet:  </h3>
-                <form id="login_form" action="/loginAccount" method="post">
-                    <input type="text" id="username" placeholder="Username" name="username" />
-                    <input type="password" id="password" placeholder="Password" name="password" />
+                <h3> Login to Meet:  </h3>
+                <form action="/loginAccount" method="post">
+                    <input type="text" placeholder="Username" name="username" />
+                    <input type="password" placeholder="Password" name="password" />
                     <button type="submit" class="button" value="submit">Login</button>
                 </form>
                 <button class="button" onclick="location.href='/register';">Register</button>
-            </div>
         </div>
         <div id="left">
            <div id="Logo">
               <h3>Welcome to Meet</h3>
-              <p id="label">Or login with one of these accounts: </p>
+              <p>Or login with one of these accounts: </p>
               <button id="facebook">Facebook</button>
               <button id="google">Google</button>
            </div>

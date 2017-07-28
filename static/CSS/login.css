@@ -38,13 +38,13 @@ body {
     font-size: 30px;
 }
 
-#right_title {
+#right h3 {
     font-size: 24px;
     padding-top: 2%;
     color: #003b46;
 }
 
-#login_form {
+#right form {
     padding-top: 3%;
     position: relative;
     display: block;
@@ -57,45 +57,25 @@ body {
     to { border: 2px solid #003b46; }
 }
 
-#username {
+#right input {
     height: 10%;
     width: 50%;
     border: none;
     padding-left: 2%;
-    background-color: #bdc3c7;
-    color: black;
-    font-family: ubuntu;
-    font-size: 15px;
-    display: block;
-    margin: 0 auto;
-}
-
-#username:focus {
-    outline: none;
-    animation-name: colour_change;
-    animation-duration: 1s;
-    animation-fill-mode: forwards;
-}
-
-#password:focus {
-    outline: none;
-    animation-name: colour_change;
-    animation-duration: 1s;
-    animation-fill-mode: forwards;
-}
-
-#password {
-    height: 10%;
-    display: block;
-    width: 50%;
-    border: none;
-    padding-left: 2%;
-    background-color: #bdc3c7;
-    color: black;
-    margin: 0 auto;
-    font-family: ubuntu;
-    font-size: 15px;
     margin-top: 5%;
+    background-color: #bdc3c7;
+    color: black;
+    font-family: ubuntu;
+    font-size: 15px;
+    display: block;
+    margin: 0 auto;
+}
+
+#right input:focus {
+    outline: none;
+    animation-name: colour_change;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
 }
 
 @keyframes shadow {
@@ -113,7 +93,7 @@ body {
     color: #fff;
     display: block;
     margin: 0 auto;
-    margin-top: 5%;
+    margin-bottom: 5%;
 }
 
 .button:hover {
@@ -127,17 +107,16 @@ body {
     outline: none;
 }
 
-#label {
+#left p {
     font-size: 15px;
     display: block;
 }
 
-#facebook {
+#left button {
     margin: 0 auto;
     display: block;
     width: 70%;
     height: 10%;
-    background-color: #3b5998;
     margin-top: 10%;
     border: none;
     font-family: ubuntu;
@@ -145,37 +124,21 @@ body {
     color: #fff;
 }
 
-#facebook:hover {
+#left button:hover {
     cursor: pointer;
     animation-name: shadow;
     animation-duration: 0.25s;
     animation-fill-mode: forwards;
 }
 
-#facebook:focus {
+#left button:focus {
     outline: none;
+}
+
+#facebook {
+    background-color: #3b5998;
 }
 
 #google {
-    margin: 0 auto;
-    display: block;
-    width: 70%;
-    height: 10%;
     background-color: #d34836;
-    margin-top: 5%;
-    border: none;
-    font-family: ubuntu;
-    font-size: 15px;
-    color: #fff;
-}
-
-#google:hover {
-    cursor: pointer;
-    animation-name: shadow;
-    animation-duration: 0.25s;
-    animation-fill-mode: forwards;
-}
-
-#google:focus {
-    outline: none;
 }
