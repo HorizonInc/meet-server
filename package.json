@@ -26,6 +26,7 @@
     "js-sha256": "^0.6.0",
     "passport": "^0.3.2",
     "redis": "^2.7.1",
-    "redis-server": "^1.1.0"
+    "redis-server": "^1.1.0",
+    "request": "^2.81.0"
   }
 }
