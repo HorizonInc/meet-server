@@ -17,7 +17,7 @@ module.exports = (app) => {
            var last_name = req.body.last_name;
            var email = req.body.email;
 
-           client.hmset("Meet:User:" + username, [
+           client.hmset("Meet:LocalUser:" + username, [
                "username", username,
                "password", password,
                "first_name", first_name,
@@ -41,9 +41,9 @@ module.exports = (app) => {
         var username = req.body.username;
         var password = sha256(req.body.password);
 
-        if(client.exists("Meet:User:" + username) == 0) {
+        if(client.exists("Meet:LocalUser:" + username) == 0) {
             res.render("invalid");
-        } else if(client.exists("Meet:User:" + username) == 1) {
+        } else if(client.exists("Meet:LocalUser:" + username) == 1) {
             var key = "Meet:User:" + username;
 
             client.hget(key, "password", (err, data) => {

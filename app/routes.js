@@ -17,8 +17,4 @@ module.exports = (app) => {
             name: "test_profile"
         });
     });
-
-    app.get("/facebookLogin", (req, res) => {
-        res.redirect("")
-    });
 }
