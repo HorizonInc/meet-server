@@ -6,7 +6,7 @@ const facebookAuth = {
 
 module.exports = (app) => {
     const querystring = require('querystring');
-    const request = require('request');
+    const request = require('request-promise');
 
     app.get("/fbLogin", (req, res) => {
         res.redirect(`https://www.facebook.com/v2.10/dialog/oauth?` +
@@ -14,7 +14,7 @@ module.exports = (app) => {
                      `&redirect_uri=${facebookAuth.callbackURL}`);
     });
 
-    var access_token;
+    var access_token, app_access_token;
 
     app.get("/fbCode", (req, response) => {
         var code = req.query.code;
@@ -24,22 +24,34 @@ module.exports = (app) => {
         if(err != undefined) {
             console.log("There was an error logging in with facebook: " + err + " " + errdesc);
         } else if(err ="undefined") {
-            request.get(`https://graph.facebook.com/v2.10/oauth/access_token?` +
+            request.get(`https://graph.facebook.com/v2.30/oauth/access_token?` +
                         `redirect_uri=${facebookAuth.callbackURL}` +
                         `&client_id=${facebookAuth.clientID}` +
                         `&client_secret=${facebookAuth.clientSecret}` +
-                        `&code=${code}` + `&scope=public_profile,user_friends`, (err, response, body) => {
-                              console.log(body);
-                              access_token = body.access_token;
-                              const fields = "id, name";
-                              request.get(`https://graph.facebook.com/?access_token=${access_token}&fields=${fields}`, (err, res, body) => {
-                                  if(err != undefined) {
-                                      console.log(err);
-                                  } else {
-                                      console.log(body);
-                                  }
-                              });
-                         });
+                        `&code=${code}`)
+            .then((body) => {
+                access_token = body.access_token;
+                request.get(`https://graph.facebook.com/v2.30/oauth/access_token` +
+                            `?client_id=${facebookAuth.clientID}` +
+                            `&client_secret=${facebookAuth.clientSecret}` +
+                            `&redirect_uri=http://localhost:8080/fbAccess` +
+                            `&grant_type=client_credentials`)
+                .then((body) => {
+                    app_access_token = body.access_token;
+                }).catch((err) => {
+                    console.log("There was an error" + err);
+                })
+            });
         }
+    });
+
+    app.get("/fbAccess", (req, res) => {
+        console.log("app_access: " + app_access_token);
+        console.log("access_token: " + access_token);
+        request.get(`https://graph.facebook.com/debug_token?` +
+                    `input_token=${access_token}` +
+                    `&access_token=${app_access_token}`, (err, response, body) => {
+                        console.log("3: " + body);
+                    });
     });
 }
