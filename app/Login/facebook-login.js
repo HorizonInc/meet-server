@@ -14,6 +14,12 @@ module.exports = (app) => {
                      `&redirect_uri=${facebookAuth.callbackURL}`);
     });
 
+
+    // 1: exchange the code for a user access_token
+    // 2: query the graph api for an app access_token
+    // 3: query the graph api to validate the user access_token and if valid get the user id
+    // 4: query the graph api to get the user details 
+
     var access_token, app_access_token;
 
     app.get("/fbCode", (req, response) => {
