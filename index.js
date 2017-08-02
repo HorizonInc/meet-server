@@ -2,7 +2,6 @@ const express = require("express");
 const exphbs = require("express-handlebars");
 const session = require("express-session");
 const bodyParser = require("body-parser");
-//const passport = require('passport');
 const cookieParser = require('cookie-parser');
 const client = require("./app/db.js")();
 
@@ -16,8 +15,6 @@ app.use(bodyParser.urlencoded({
 	extended: true
 }));
 app.use(cookieParser());
-//app.use(passport.initialize());
-//app.use(passport.session());
 //app.use(flash());
 
 app.use(express.static(__dirname + "/static"));
@@ -25,6 +22,8 @@ app.use(express.static(__dirname + "/static"));
 require("./app/routes.js")(app);
 require("./app/Login/local-login.js")(app);
 require("./app/Login/facebook-login.js")(app);
+require("./app/Login/twitter-login.js")(app);
+require("./app/Login/google-login.js")(app);
 
 const port = 8080;
 app.listen(port);
