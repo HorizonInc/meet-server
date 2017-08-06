@@ -1,7 +1,7 @@
 const facebookAuth = {
     'clientID' : '129',
-    'clientSecret' : '//',
-    'callbackURL' : 'http://localhost:8080/fbCode',
+    'clientSecret' : '675',
+    'callbackURL' : 'http://localhost:8080/fbCode'
 }
 
 module.exports = (app) => {
@@ -14,13 +14,14 @@ module.exports = (app) => {
                      `&redirect_uri=${facebookAuth.callbackURL}`);
     });
 
-    var access_token;
-
     app.get("/fbCode", (req, res) => {
         var code = req.query.code;
         var err = req.query.error;
         var errdesc = req.query.error_description;
+        var access_token;
+        var person;
 
+        if(access_token == undefined) {
             if(err != undefined) {
                 console.log("There was an error logging in with facebook: " + err + " " + errdesc);
             } else if(err ="undefined") {
@@ -29,14 +30,20 @@ module.exports = (app) => {
                             `&client_id=${facebookAuth.clientID}` +
                             `&client_secret=${facebookAuth.clientSecret}` +
                             `&code=${code}`, (err, res, body) => {
+                                console.log(body);
                                 var data = JSON.parse(body);
                                 access_token = data.access_token;
                                 request.get(`https://graph.facebook.com/v2.10/me?` +
-                                            `fields=id%2Cname` +
+                                            `fields=id%2Cname%2Cpicture` +
                                             `&access_token=${access_token}`, (err, res, body) => {
-                                                var person = JSON.parse(body);
+                                                person = JSON.parse(body);
+                                                console.log("welcome, " + person.name);
+                                                console.log(body);
                                             });
                             });
             }
+        }
+
+
     });
 }

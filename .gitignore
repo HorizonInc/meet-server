@@ -61,5 +61,8 @@ typings/
 # dotenv environment variables file
 .env
 
+#auth_credentials keys
+auth_credentials.js
+
 
 # End of https://www.gitignore.io/api/node
