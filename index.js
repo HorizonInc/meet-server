@@ -12,7 +12,7 @@ const app = express();
 app.engine("handlebars", exphbs({defaultLayout: "main"}));
 app.set("view engine", "handlebars");
 
-const expiry = (60000 * 60); //session expiry time (1 hour currently)
+const expiry = (60000 * 600); //session expiry time (1 hour currently)
 
 app.use(session({
 	secret: '/////',

@@ -1,4 +1,4 @@
-module.exports = (app) => {
+module.exports = (app, validator) => {
     const client = require("../db.js")();
     const sha256 = require("js-sha256");
 
