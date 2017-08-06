@@ -1,6 +1,6 @@
 const facebookAuth = {
-    'clientID' : '129',
-    'clientSecret' : '675',
+    'clientID' : '12',
+    'clientSecret' : '67',
     'callbackURL' : 'http://localhost:8080/fbCode'
 }
 
@@ -34,8 +34,9 @@ module.exports = (app) => {
                                 var data = JSON.parse(body);
                                 access_token = data.access_token;
                                 request.get(`https://graph.facebook.com/v2.10/me?` +
-                                            `fields=id%2Cname%2Cpicture` +
-                                            `&access_token=${access_token}`, (err, res, body) => {
+                                            `fields=id%2Cname%2Cpicture%2Cemail` +
+                                            `&access_token=${access_token}`+
+                                            `&redirect_uri=http://localhost:8080/`, (err, res, body) => {
                                                 person = JSON.parse(body);
                                                 console.log("welcome, " + person.name);
                                                 console.log(body);

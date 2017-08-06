@@ -18,6 +18,7 @@
   "homepage": "https://github.com/OrganTrouble/Meet#readme",
   "dependencies": {
     "body-parser": "^1.17.2",
+    "connect-redis": "^3.3.0",
     "cookie-parser": "^1.4.3",
     "express": "^4.15.3",
     "express-handlebars": "^3.0.0",
