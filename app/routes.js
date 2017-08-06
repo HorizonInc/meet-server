@@ -4,7 +4,7 @@ module.exports = (app, client) => {
 
     app.get("/", (req, res) => {
         if(req.session.key) {
-            client.hget(`Meet:LocalUser:${req.session.key}`, "first_name", (err, data, res) => {
+            client.hget(`Meet:LocalUser:${req.session.key}`, "first_name", (err, data) => {
                 name = data;
                 res.render("index", {
                     name: name
@@ -20,7 +20,9 @@ module.exports = (app, client) => {
     });
 
     app.get("/register", (req, res) => {
-        res.render("register");
+        res.render("register", {
+            errors: null
+        });
     });
 
     app.get("/indextest", (req, res) => {

@@ -29,17 +29,20 @@ module.exports = (app) => {
                             `redirect_uri=${facebookAuth.callbackURL}` +
                             `&client_id=${facebookAuth.clientID}` +
                             `&client_secret=${facebookAuth.clientSecret}` +
-                            `&code=${code}`, (err, res, body) => {
+                            `&code=${code}`, (err, body) => {
                                 console.log(body);
                                 var data = JSON.parse(body);
                                 access_token = data.access_token;
                                 request.get(`https://graph.facebook.com/v2.10/me?` +
                                             `fields=id%2Cname%2Cpicture%2Cemail` +
                                             `&access_token=${access_token}`+
-                                            `&redirect_uri=http://localhost:8080/`, (err, res, body) => {
+                                            `&redirect_uri=http://localhost:8080/`, (err, body) => {
                                                 person = JSON.parse(body);
                                                 console.log("welcome, " + person.name);
                                                 console.log(body);
+                                                res.render("index", {
+                                                    name: person.name
+                                                });
                                             });
                             });
             }

@@ -23,6 +23,7 @@
     "express": "^4.15.3",
     "express-handlebars": "^3.0.0",
     "express-session": "^1.15.4",
+    "express-validator": "^3.2.1",
     "flash": "^1.1.0",
     "js-sha256": "^0.6.0",
     "passport": "^0.3.2",

@@ -49,7 +49,7 @@ body {
 }
 
 #side_nav {
-    background-color: #fff;
+    background-color: #ecf0f1;
 }
 
 #side_nav_top {
@@ -60,10 +60,13 @@ body {
     background-color: #003b46;
     border: 0;
     padding: 0;
+    padding-bottom: 7%;
+    padding-top: 7%;
 }
 
 #side_nav_title h1 {
-    margin-top: 5%;
+    margin-top: 0;
+    margin-bottom: 0;
     font-size: 3em;
     text-align: center;
     padding: 0;

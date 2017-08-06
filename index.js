@@ -3,6 +3,7 @@ const exphbs = require("express-handlebars");
 const session = require("express-session");
 const redisStore = require("connect-redis")(session);
 const bodyParser = require("body-parser");
+const validator = require('express-validator');
 const cookieParser = require('cookie-parser');
 const client = require("./app/db.js")();
 
@@ -24,13 +25,14 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
 	extended: true
 }));
+app.use(validator());
 app.use(cookieParser());
 //app.use(flash());
 
 app.use(express.static(__dirname + "/static"));
 
 require("./app/routes.js")(app, client);
-require("./app/Login/local-login.js")(app);
+require("./app/Login/local-login.js")(app, validator);
 require("./app/Login/facebook-login.js")(app);
 require("./app/Login/twitter-login.js")(app);
 require("./app/Login/google-login.js")(app);
