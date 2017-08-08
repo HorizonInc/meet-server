@@ -18,7 +18,7 @@ module.exports = (app, validator) => {
                 errors: error
             });
         } else {
-            client.exists(`Meet:LocalUser:${req.body.username}`, (err, reply) => {
+            client.exists(`Meet:User:${req.body.username}`, (err, reply) => {
                 if(err) {
                     console.log("There has been an error in making sure that the username is unique: " + err);
                 } else if(!err) {
@@ -34,7 +34,7 @@ module.exports = (app, validator) => {
                         var last_name = req.body.last_name;
                         var email = req.body.email;
 
-                        client.hmset("Meet:LocalUser:" + username, [
+                        client.hmset("Meet:User:" + username, [
                             "username", username,
                             "password", password,
                             "first_name", first_name,
@@ -61,7 +61,7 @@ module.exports = (app, validator) => {
             var username = req.body.username;
             var password = sha256(req.body.password);
 
-            client.exists(`Meet:LocalUser:${username}`, (err, reply) => {
+            client.exists(`Meet:User:${username}`, (err, reply) => {
                 if(err) {
                     console.log("There has been an error in making sure the entered username exists: " + err);
                 } else if(!err) {
