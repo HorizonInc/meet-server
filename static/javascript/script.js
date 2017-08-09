@@ -7,6 +7,10 @@ function initMap() {
     });
 }
 
-document.getElementById("menu").onclick = function slideOut() {
-    $("#side_nav").addClass("display");
-}
+var animationSpeed = 250;
+
+$(document).ready(function() {
+    $("#menu").click(() => {
+        $("#side_nav").animate({left:"0"}, animationSpeed);
+    });
+});

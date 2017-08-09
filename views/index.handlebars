@@ -3,7 +3,9 @@
     <i id="menu" class="fa fa-bars"></i>
     <div id="search">
         <i class="fa fa-search" id="search_icon"></i>
-        <input type="text" id="searchBar" name="search">
+        <form method="post" action="/search">
+            <input type="text" id="searchBar" name="search">
+        </form>
     </div>
     <div id="profile">
         <p id="welcome">Welcome, {{name}}</p>

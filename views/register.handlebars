@@ -4,11 +4,11 @@
         <p id="title"> Signup for Meet: </p>
         {{#if errors}}
             <ul>
-                {{ #each errors }}
+                {{#each errors }}
                     <li>{{this.msg}}<li>
-                {{ /each }}
+                {{/each }}
             </ul>
-        {{ /if }}
+        {{/if }}
         <div id="sform">
             <form id="signup_form" method="post" action="/signup">
                 <input type="text" id="username" class="block input" name="username" placeholder="Username" />

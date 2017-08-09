@@ -32,7 +32,6 @@ module.exports = (app) => {
                             `&client_id=${facebookAuth.clientID}` +
                             `&client_secret=${facebookAuth.clientSecret}` +
                             `&code=${code}`, (err, body) => {
-                                console.log(body);
                                 var data = JSON.parse(body);
                                 access_token = data.access_token;
                                 expiry = data.expires_in;
@@ -42,7 +41,6 @@ module.exports = (app) => {
                                             `&redirect_uri=http://localhost:8080/`, (err, body) => {
                                                 person = JSON.parse(body);
                                                 console.log("welcome, " + person.name);
-                                                console.log(body);
                                                 res.redirect("/username");
                                             });
                             });

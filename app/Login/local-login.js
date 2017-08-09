@@ -15,7 +15,7 @@ module.exports = (app, validator) => {
 
         if(errors) {
             res.render("register", {
-                errors: error
+                errors: errors
             });
         } else {
             client.exists(`Meet:User:${req.body.username}`, (err, reply) => {

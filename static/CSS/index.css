@@ -6,9 +6,9 @@ body {
 }
 
 #side_nav {
-    display: none;
     height: 100%;
     width: 15%;
+    left: -15%;
     background-color: #003b46;
     position: fixed;
     z-index: 900;
