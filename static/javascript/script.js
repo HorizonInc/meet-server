@@ -1,4 +1,10 @@
-var map;
+var map, place_id, lat, lng;
+
+$.get("/addressGet", (place) => {
+    place.lat = lat;
+    place.lng = lng;
+    place.placeId = place_id;
+});
 
 function initMap() {
     map = new google.maps.Map(document.getElementById("map") , {

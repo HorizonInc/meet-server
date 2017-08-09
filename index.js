@@ -6,6 +6,7 @@ const session = require("express-session");
 const redisStore = require("connect-redis")(session);
 const bodyParser = require("body-parser");
 const validator = require('express-validator');
+const request = require('request');
 const cookieParser = require('cookie-parser');
 const client = require("./app/db.js")();
 
@@ -14,7 +15,7 @@ const app = express();
 app.engine("handlebars", exphbs({defaultLayout: "main"}));
 app.set("view engine", "handlebars");
 
-const expiry = (60000 * 600); //session expiry time (1 hour currently)
+const expiry = (5184000000); //session expiry time (1 hour currently)
 
 app.use(session({
 	secret: '/////',
@@ -38,6 +39,7 @@ require("./app/Login/local-login.js")(app, validator);
 require("./app/Login/facebook-login.js")(app);
 require("./app/Login/twitter-login.js")(app);
 require("./app/Login/google-login.js")(app);
+require("./app/maps.js")(app, client, request);
 
 const port = 8080;
 app.listen(port);

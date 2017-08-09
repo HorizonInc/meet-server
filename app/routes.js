@@ -31,17 +31,23 @@ module.exports = (app, client) => {
         });
     });
 
-    app.get("/search", (req, res) => {
-        client.exists(`Meet:User:${req.body.username}`, (err, data) => {
-            if(err) {
-                console.log(err);
-            } else {
-                if(reply == 0) {
-                    res.render("search", {
-                        exists: "doesn't exist"
-                    });
-                } else if("reply")
-            }
+    app.get("/maptest", (req, res) => {
+        res.render("index" {
+            name: "test_profile"
         });
     });
+
+    //app.get("/search", (req, res) => {
+    //    client.exists(`Meet:User:${req.body.username}`, (err, data) => {
+    //        if(err) {
+    //            console.log(err);
+    //        } else {
+    //            if(reply == 0) {
+    //                res.render("search", {
+    //                    exists: "doesn't exist"
+    //                });
+    //            } else if("reply")
+    //        }
+    //    });
+//})//;
 }

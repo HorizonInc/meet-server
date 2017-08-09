@@ -4,9 +4,8 @@ const facebookAuth = {
     'callbackURL' : 'http://localhost:8080/fbCode'
 }
 
-module.exports = (app) => {
+module.exports = (app, request) => {
     const querystring = require('querystring');
-    const request = require('request');
     const client = require('../db.js');
 
     app.get("/fbLogin", (req, res) => {
