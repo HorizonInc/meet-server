@@ -22,6 +22,10 @@ body {
     flex-direction: column;
 }
 
+.login_container h1 {
+    font-family: league-gothic, sans-serif;
+}
+
 .local {
     display: flex;
     flex-direction: column;
