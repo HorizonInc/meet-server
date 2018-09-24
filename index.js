@@ -1,16 +1,17 @@
+'use strict';
+
 const express = require('express');
-const exphbs = require('express-handlebars');
+const bodyParser = require('body-parser');
 
 const app = express();
 
-require('./app/routes.js')(app);
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
-//setting up the templating engine
-app.engine('handlebars', exphbs({defaultLayout: "main"}));
-app.set('view engine', 'handlebars');
+const mongoose = require('./db.js');
 
-//setting up other dependencies
-app.use(express.static(__dirname + "/static"));
+require('./db.js');
+require('./lib/genGroup.js');
 
 var port = 8080;
 app.listen(port);
