@@ -10,8 +10,7 @@ app.use(bodyParser.json());
 
 const mongoose = require('./db.js');
 
-require('./db.js');
-require('./lib/genGroup.js');
+const generateGroup = require('./lib/genGroup.js')(app);
 
 var port = 8080;
 app.listen(port);
