@@ -1,3 +1,4 @@
+'use strict';
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
@@ -8,7 +9,7 @@ var userDataSchema = new Schema({
     _id: String,
     name: String,
     meetId: String,
-    pictureURL: String
+    pictureURL: String,
 });
 
 var groupDataSchema = new Schema({
@@ -17,7 +18,7 @@ var groupDataSchema = new Schema({
     groupMembers: Array,
 });
 
-var UserData = mongoose.model('UserData', userDataSchema, 'UserData');
-var GroupData = mongoose.model('GroupData', groupDataSchema, 'GroupData');
+var UserData = mongoose.model('UserData', userDataSchema, 'UserData');  // eslint-disable-line
+var GroupData = mongoose.model('GroupData', groupDataSchema, 'GroupData');  // eslint-disable-line
 
 module.exports = mongoose;
