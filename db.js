@@ -8,6 +8,7 @@ var userDataSchema = new Schema({
     _id: String,
     name: String,
     meetId: String,
+    pictureURL: String
 });
 
 var groupDataSchema = new Schema({
