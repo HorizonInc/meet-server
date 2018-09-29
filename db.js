@@ -2,18 +2,18 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 mongoose.promise = require('bluebird');
-mongoose.connect(`mongodb://localhost:27017/Meet`, { useNewUrlParser: true});
+mongoose.connect('mongodb://localhost:27017/Meet', { useNewUrlParser: true});
 
 var userDataSchema = new Schema({
     _id: String,
     name: String,
-    meetId: String
+    meetId: String,
 });
 
 var groupDataSchema = new Schema({
-   _id: String,
-   groupAdminId: String,
-   groupMembers: Array
+    _id: String,
+    groupAdminId: String,
+    groupMembers: Array,
 });
 
 var UserData = mongoose.model('UserData', userDataSchema, 'UserData');
