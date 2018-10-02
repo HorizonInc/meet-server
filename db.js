@@ -10,7 +10,7 @@ var userDataSchema = new Schema({
     name: String,
     meetId: String,
     pictureURL: String,
-    invites: Array
+    invites: Array,
 });
 
 var groupDataSchema = new Schema({
