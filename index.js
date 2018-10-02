@@ -11,7 +11,7 @@ app.use(bodyParser.json());
 
 require('./db.js');
 
-require('./lib/login/facebook.js')(app);
+require('./lib/Login/facebook.js')(app);
 
 require('./lib/genGroup.js')(app);
 
