@@ -6,6 +6,9 @@ const bodyParser = require('body-parser');
 
 const app = express();
 
+const server = require('http').createServer(app);
+const io = require('socket.io')(server);
+
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
@@ -15,6 +18,9 @@ require('./lib/Login/facebook.js')(app);
 
 require('./lib/genGroup.js')(app);
 
-var port = 8080;
-app.listen(port);
+// loading the web socket connection module
+require('./lib/socketConnection.js')(app, io);
+
+var port = 8080 || process.env.PORT;
+server.listen(port);
 console.log('server listening on port ' + port);

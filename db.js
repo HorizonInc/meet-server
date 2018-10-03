@@ -16,7 +16,8 @@ var userDataSchema = new Schema({
 var groupDataSchema = new Schema({
     _id: String,
     groupAdminId: String,
-    groupMembers: Array,
+    accepted_members: Array,
+    invited_members: Array,
 });
 
 var UserData = mongoose.model('UserData', userDataSchema, 'UserData');  // eslint-disable-line

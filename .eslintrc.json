@@ -6,6 +6,6 @@
   "rules": {
     "indent": ["error", 4],
     "max-len": [2, {"code": 200, "tabWidth": 4, "ignoreUrls": true}],
-    "no-unused-vars": 1
+    "no-unused-vars": 0
   }
 }
