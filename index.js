@@ -17,6 +17,7 @@ require('./db.js');
 require('./lib/Login/facebook.js')(app);
 
 require('./lib/genGroup.js')(app);
+require('./lib/groupInvites.js')(app);
 
 // loading the web socket connection module
 require('./lib/socketConnection.js')(app, io);
