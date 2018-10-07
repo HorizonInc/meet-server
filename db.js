@@ -6,7 +6,6 @@ mongoose.promise = require('bluebird');
 mongoose.connect('mongodb://localhost:27017/Meet', { useNewUrlParser: true});
 
 var userDataSchema = new Schema({
-    _id: String,
     name: String,
     meetId: String,
     pictureURL: String,
@@ -14,7 +13,6 @@ var userDataSchema = new Schema({
 });
 
 var groupDataSchema = new Schema({
-    _id: String,
     groupAdminId: String,
     accepted_members: Array,
     invited_members: Array,
