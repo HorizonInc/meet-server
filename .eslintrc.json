@@ -1,5 +1,5 @@
 {
-  "extends": "strongloop",
+  "extends": "eslint-config-node-style-guide",
   "parserOptions": {
     "ecmaVersion": 8
   },
