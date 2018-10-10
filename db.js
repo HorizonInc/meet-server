@@ -13,7 +13,7 @@ var userDataSchema = new Schema({
 });
 
 var groupDataSchema = new Schema({
-    groupAdminId: String,
+    group_admin_id: String,
     accepted_members: Array,
     invited_members: Array,
 });
