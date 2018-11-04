@@ -1,11 +1,3 @@
 {
-  "extends": "eslint-config-node-style-guide",
-  "parserOptions": {
-    "ecmaVersion": 8
-  },
-  "rules": {
-    "indent": ["error", 4],
-    "max-len": [2, {"code": 200, "tabWidth": 4, "ignoreUrls": true}],
-    "no-unused-vars": 0
-  }
+  "extends": "horizon"
 }
