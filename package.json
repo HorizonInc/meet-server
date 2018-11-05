@@ -30,6 +30,7 @@
     "eslint-config-google": "^0.10.0",
     "eslint-config-horizon": "^1.0.2",
     "eslint-config-node-style-guide": "^3.0.0",
-    "eslint-config-strongloop": "^2.1.0"
+    "eslint-config-strongloop": "^2.1.0",
+    "eslint-plugin-react": "^7.11.1"
   }
 }
