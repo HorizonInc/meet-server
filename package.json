@@ -26,6 +26,7 @@
     "socket.io": "^2.1.1"
   },
   "devDependencies": {
+    "babel-eslint": "^10.0.1",
     "eslint": "^5.6.1",
     "eslint-config-google": "^0.10.0",
     "eslint-config-horizon": "^1.0.2",
