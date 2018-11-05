@@ -1,9 +1,10 @@
-"use strict";
-require("dotenv").load();
-const express = require("express");
-const bodyParser = require("body-parser");
-const session = require("express-session");
-const MongoDBStore = require("connect-mongodb-session")(session);
+'use strict';
+require('dotenv').load();
+const express = require('express');
+const bodyParser = require('body-parser');
+const session = require('express-session');
+const cors = require('cors');
+const MongoDBStore = require('connect-mongodb-session')(session);
 
 const app = express();
 
@@ -19,6 +20,7 @@ let expiry = (96 * 60 * 60 * 1000);
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+app.use(cors());
 app.use(session({
 	secret: "V8W060£6F0#DF6DSNM67",
 	saveUninitialized: false,
