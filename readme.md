@@ -1,4 +1,4 @@
-## Meet server
+# Meet server
 
-# Builds
+## Builds
 [![Build Status](https://travis-ci.com/HorizonInc/meet-server.svg?branch=master)](https://travis-ci.com/HorizonInc/meet-server)
