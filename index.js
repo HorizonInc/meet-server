@@ -20,7 +20,7 @@ let expiry = (96 * 60 * 60 * 1000);
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-app.use(cors())
+app.use(cors());
 app.use(session({
     secret: 'V8W060£6F0#DF6DSNM67',
     saveUninitialized: false,
